@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class NewsPage extends StatelessWidget {
   final String userId;
@@ -25,7 +26,12 @@ class NewsPage extends StatelessWidget {
               )),
           SizedBox(height: 16),
           Text("User ID: $userId"),
-          Text("News URL: \nhttps://$userId.medium.com/$path")
+          Text("News URL: \nhttps://$userId.medium.com/$path"),
+          ElevatedButton(
+              onPressed: (){
+                context.pushNamed("test");
+              },
+              child: Text('go to test page'))
         ],
       ),
     );
